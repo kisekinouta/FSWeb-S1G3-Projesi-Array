@@ -40,8 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(yeniDizi){
+  yeniDizi = [...orijinalTatlar];
+  return yeniDizi;
+
 }
 
 
@@ -56,9 +58,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi) {
+  if (dizi.length === 25){
+    return true
+  } else {
+  return false
+  }  
 }
+
 
 
 /* Görev 3:
@@ -108,10 +115,12 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(sampleArray){
+  console.log(indekstekiCesitiGetir(orijinalTatlar, 7));
+  return orijinalTatlar
 }
 
+console.log(indekstekiCesitiGetir(orijinalTatlar, 7));
 
 /* Görev 6:
 
@@ -127,9 +136,14 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
 
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
-
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(sampleArray, sampleItem) {
+  let index = sampleArray.indexof(sampleItem);
+  sampleArray.splice(index, 1); 
+}
+ismeGoreCesitCikar(orijinalTatlar, "Franbuaz");
+{
+  let index = orijinalTatlar.indexof("Franbuaz");
+  orijinalTatlar.splice(index, 1); 
 }
 
 
@@ -153,11 +167,19 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
   Bu sorunu çözmek için GELİŞMİŞ DİZİ YÖNTEMLERİNİ (yani .filter) KULLANMAYIN.
 */
 
+let newArray = [
+]
+function ismeGoreFiltrele(sampleArray, sampleItem) {
+  if(sampleArray.includes(sampleItem)){
+    newArray.push(sampleItem)
+  } else{
+    return "Bu bizde yok"
+  }
+  }
+  return sampleArray.includes(sampleItem) ? newArray.push(sampleItem): 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
-}
-
+ismeGoreFiltrele(orijinalTatlar, "Çikolata")
+ismeGoreFiltrele(orijinalTatlar, Badem)
 
 
 /* ALIŞTIRMA */
